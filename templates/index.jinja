@@ -1,0 +1,16 @@
+{% extends './layout.jinja' %} {% block title %}
+{{ data.title }}
+{% endblock %} {% block content %}
+
+<h1>{{ data.message }}</h1>
+
+{% if data.courses_amount > 0 %}
+<ul>
+  <p>They are {{ data.courses_amount }} courses:</p>
+  {% for course in data.courses %}
+  <li>{{ course }}</li>
+  {% endfor %}
+</ul>
+{% else %}
+<h2>No courses to show</h2>
+{% endif %} {% endblock content %}
